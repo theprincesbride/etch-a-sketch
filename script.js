@@ -18,6 +18,8 @@ square.addEventListener('mouseover', function (e) {
 
 const gridBtn = document.querySelector(".set-grid-size");
 
+const drawText = document.querySelector(".draw");
+
 gridBtn.addEventListener('click', function() {
     let gridSize = prompt('Please enter your desired grid size between 1 and 100.', '');
     if (gridSize <= 0) {
@@ -57,7 +59,7 @@ gridBtn.addEventListener('click', function() {
 
             //let buttontext = document.createTextNode("Click here to reload page");
             //reloadBtn.appendChild(buttontext);
-            body.insertBefore(link, container2);
+            body.insertBefore(link, drawText);
 
 
 
