@@ -37,3 +37,17 @@ body {
     margin-bottom: 50px;
 
 }
+
+.reload {
+    background-color: darkred;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color:aliceblue;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 50px;
+
+}

@@ -19,11 +19,14 @@ square.addEventListener('mouseover', function (e) {
 const gridBtn = document.querySelector(".set-grid-size");
 
 gridBtn.addEventListener('click', function() {
-    let gridSize = prompt('Please enter your desired grid size', '');
+    let gridSize = prompt('Please enter your desired grid size between 1 and 100.', '');
     if (gridSize <= 0) {
-        gridSize = prompt('Please enter a size over 0.', '');
+        alert('Please enter a size over 0.');
     }
-    else if (gridSize > 0) {
+    else if (gridSize > 100) {
+        alert('Please enter a size less than 100.');
+    }
+    else if (gridSize > 0 && gridSize <= 100) {
         let gridArea = gridSize * gridSize;
         console.log(gridSize, gridArea);
         body.removeChild(container);
@@ -37,10 +40,33 @@ gridBtn.addEventListener('click', function() {
         }
         container2.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
         container2.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
+
+        const newSquares = document.querySelectorAll(".square");
+        newSquares.forEach(function(square) {
+            square.addEventListener('mouseover', function (e) {
+                e.target.style.backgroundColor = "black";
+            })
+            });
+
+            body.removeChild(gridBtn);
+            const link = document.createElement("a");
+            link.setAttribute("href", "index.html");
+            link.classList.add("reload");
+            link.textContent = "Click here to reload page"
+
+            //let buttontext = document.createTextNode("Click here to reload page");
+            //reloadBtn.appendChild(buttontext);
+            body.insertBefore(link, container2);
+
+
+
+
+
     }
 });
 
-const container2 = document.querySelector(".container2");
+
 
 
 // function buttonClick() {
